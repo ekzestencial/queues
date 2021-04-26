@@ -1,0 +1,64 @@
+version: '3.4'
+
+networks:
+    net:
+
+services:
+
+### Redis ################################################
+    redis:
+      build: ./redis
+      container_name: redis
+      ports:
+        - "6379:6379"
+      networks:
+        - net
+
+### REDISWEBUI ################################################
+    redis-webui:
+      build: ./redis-webui
+      container_name: redis_webui
+      environment:        
+        - REDIS_1_HOST=redis
+        - REDIS_1_PORT=6379
+      networks:
+        - net
+      ports:
+        - "9987:80"
+      depends_on:
+        - redis
+
+### Producer ###################################
+    producer:
+      build:
+         context: ../App
+         dockerfile: Producers/Dockerfile
+      container_name: producer
+      ports:
+        - "80:80"
+      depends_on:
+        - redis
+      networks:
+        - net
+
+### Redis.Consumer ###################################
+    consumer:
+      build:
+         context: ../App
+         dockerfile: Redis.Consumer/Dockerfile
+      container_name: consumer      
+      depends_on:
+        - redis
+      networks:
+        - net
+
+### Siege ###################################
+    siege:
+      build:
+         context: ../Siege
+         dockerfile: Dockerfile
+      container_name: siege
+      volumes:
+        - ./Siege:/var/log/log/
+      networks:
+        - net

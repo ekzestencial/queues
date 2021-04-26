@@ -1,0 +1,136 @@
+docker-compose run --rm siege -c10 -t30s -l --content-type "application/json" "http://producer/redis/send POST ''"
+
+Transactions:                  13082 hits
+Availability:                 100.00 %
+Elapsed time:                  29.71 secs
+Data transferred:               0.00 MB
+Response time:                  0.02 secs
+Transaction rate:             440.32 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                    9.97
+Successful transactions:       13082
+Failed transactions:               0
+Longest transaction:            8.79
+Shortest transaction:           0.00
+
+Transactions:                  13451 hits
+Availability:                 100.00 %
+Elapsed time:                  29.07 secs
+Data transferred:               0.00 MB
+Response time:                  0.02 secs
+Transaction rate:             462.71 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                    9.96
+Successful transactions:       13451
+Failed transactions:               0
+Longest transaction:            6.04
+Shortest transaction:           0.00
+
+Transactions:                  13346 hits
+Availability:                 100.00 %
+Elapsed time:                  29.84 secs
+Data transferred:               0.00 MB
+Response time:                  0.02 secs
+Transaction rate:             447.25 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                    9.98
+Successful transactions:       13346
+Failed transactions:               0
+Longest transaction:            9.03
+Shortest transaction:           0.00
+
+docker-compose run --rm siege -c25 -t30s -l --content-type "application/json" "http://producer/redis/send POST ''"
+
+Transactions:                   5871 hits
+Availability:                 100.00 %
+Elapsed time:                  29.98 secs
+Data transferred:               0.00 MB
+Response time:                  0.13 secs
+Transaction rate:             195.83 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   24.96
+Successful transactions:        5871
+Failed transactions:               0
+Longest transaction:           13.56
+Shortest transaction:           0.00
+
+Transactions:                   7721 hits
+Availability:                 100.00 %
+Elapsed time:                  29.08 secs
+Data transferred:               0.00 MB
+Response time:                  0.09 secs
+Transaction rate:             265.51 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   24.97
+Successful transactions:        7721
+Failed transactions:               0
+Longest transaction:           11.08
+Shortest transaction:           0.00
+
+Transactions:                   5331 hits
+Availability:                 100.00 %
+Elapsed time:                  30.00 secs
+Data transferred:               0.00 MB
+Response time:                  0.14 secs
+Transaction rate:             177.70 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   24.96
+Successful transactions:        5331
+Failed transactions:               0
+Longest transaction:           16.60
+Shortest transaction:           0.00
+
+Transactions:                   5352 hits
+Availability:                 100.00 %
+Elapsed time:                  29.50 secs
+Data transferred:               0.00 MB
+Response time:                  0.14 secs
+Transaction rate:             181.42 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   24.97
+Successful transactions:        5352
+Failed transactions:               0
+Longest transaction:           16.09
+Shortest transaction:           0.00
+
+docker-compose run --rm siege -c50 -t30s --content-type "application/json" "http://producer/redis/send POST ''"
+
+Transactions:                    589 hits
+Availability:                 100.00 %
+Elapsed time:                  29.19 secs
+Data transferred:               0.00 MB
+Response time:                  2.44 secs
+Transaction rate:              20.18 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   49.31
+Successful transactions:         589
+Failed transactions:               0
+Longest transaction:           21.11
+Shortest transaction:           0.01
+
+Transactions:                    771 hits
+Availability:                 100.00 %
+Elapsed time:                  29.98 secs
+Data transferred:               0.00 MB
+Response time:                  1.56 secs
+Transaction rate:              25.72 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   40.08
+Successful transactions:         771
+Failed transactions:               0
+Longest transaction:           23.29
+Shortest transaction:           0.01
+
+Transactions:                    810 hits
+Availability:                 100.00 %
+Elapsed time:                  29.67 secs
+Data transferred:               0.00 MB
+Response time:                  1.07 secs
+Transaction rate:              27.30 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   29.29
+Successful transactions:         810
+Failed transactions:               0
+Longest transaction:           12.24
+Shortest transaction:           0.01
+

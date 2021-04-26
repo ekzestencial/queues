@@ -1,0 +1,62 @@
+version: '3.4'
+
+networks:
+    net:
+
+services:
+
+### Beanstalkd ###########################################
+    beanstalkd:
+      build: ./beanstalkd
+      container_name: beanstalkd
+      ports:
+        - "11300:11300"
+      privileged: true      
+      networks:
+        - net
+
+### Beanstalkd Console ###################################
+#    beanstalkd-console:
+#      build: ./beanstalkd-console
+#      container_name: beanstalkd_console
+#      ports:
+#        - "2080:2080"
+#      depends_on:
+#        - beanstalkd
+#      networks:
+#        - net
+
+### Producer ###################################
+    producer:
+      build:
+         context: ../App
+         dockerfile: Producers/Dockerfile
+      container_name: producer
+      ports:
+        - "80:80"
+      depends_on:
+        - beanstalkd
+      networks:
+        - net
+
+### Beanstalkd.Consumer ###################################
+    consumer:
+      build:
+         context: ../App
+         dockerfile: Beanstalkd.Consumer/Dockerfile
+      container_name: consumer      
+      depends_on:
+        - beanstalkd
+      networks:
+        - net
+
+### Siege ###################################
+    siege:
+      build:
+         context: ../Siege
+         dockerfile: Dockerfile
+      container_name: siege
+      volumes:
+        - ./Siege:/var/log/log/
+      networks:
+        - net

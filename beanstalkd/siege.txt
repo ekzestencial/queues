@@ -1,0 +1,123 @@
+docker-compose run --rm siege -c10 -t30s -l --content-type "application/json" "http://producer/beanstalkd/send POST ''"
+
+Transactions:                  14814 hits
+Availability:                 100.00 %
+Elapsed time:                  29.71 secs
+Data transferred:               0.00 MB
+Response time:                  0.02 secs
+Transaction rate:             498.62 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                    9.96
+Successful transactions:       14814
+Failed transactions:               0
+Longest transaction:            9.06
+Shortest transaction:           0.00
+
+Transactions:                  14798 hits
+Availability:                 100.00 %
+Elapsed time:                  29.36 secs
+Data transferred:               0.00 MB
+Response time:                  0.02 secs
+Transaction rate:             504.02 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                    9.97
+Successful transactions:       14798
+Failed transactions:               0
+Longest transaction:            8.12
+Shortest transaction:           0.00
+
+Transactions:                  15010 hits
+Availability:                 100.00 %
+Elapsed time:                  29.75 secs
+Data transferred:               0.00 MB
+Response time:                  0.02 secs
+Transaction rate:             504.54 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                    9.97
+Successful transactions:       15010
+Failed transactions:               0
+Longest transaction:            7.75
+Shortest transaction:           0.00
+
+docker-compose run --rm siege -c25 -t30s -l --content-type "application/json" "http://producer/beanstalkd/send POST ''"
+
+Transactions:                   6147 hits
+Availability:                 100.00 %
+Elapsed time:                  29.93 secs
+Data transferred:               0.00 MB
+Response time:                  0.12 secs
+Transaction rate:             205.38 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   24.98
+Successful transactions:        6147
+Failed transactions:               0
+Longest transaction:           17.58
+Shortest transaction:           0.00
+
+Transactions:                   7814 hits
+Availability:                 100.00 %
+Elapsed time:                  29.74 secs
+Data transferred:               0.00 MB
+Response time:                  0.10 secs
+Transaction rate:             262.74 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   24.96
+Successful transactions:        7814
+Failed transactions:               0
+Longest transaction:           19.66
+Shortest transaction:           0.00
+
+Transactions:                   6961 hits
+Availability:                 100.00 %
+Elapsed time:                  29.89 secs
+Data transferred:               0.00 MB
+Response time:                  0.11 secs
+Transaction rate:             232.89 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   24.90
+Successful transactions:        6961
+Failed transactions:               0
+Longest transaction:            2.08
+Shortest transaction:           0.00
+
+docker-compose run --rm siege -c50 -t30s --content-type "application/json" "http://producer/beanstalkd/send POST ''"
+
+Transactions:                    332 hits
+Availability:                 100.00 %
+Elapsed time:                  29.39 secs
+Data transferred:               0.00 MB
+Response time:                  4.10 secs
+Transaction rate:              11.30 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   46.27
+Successful transactions:         332
+Failed transactions:               0
+Longest transaction:           19.62
+Shortest transaction:           0.01
+
+Transactions:                    223 hits
+Availability:                 100.00 %
+Elapsed time:                  29.22 secs
+Data transferred:               0.00 MB
+Response time:                  6.26 secs
+Transaction rate:               7.63 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   47.75
+Successful transactions:         223
+Failed transactions:               0
+Longest transaction:           28.06
+Shortest transaction:           0.00
+
+Transactions:                    313 hits
+Availability:                  99.68 %
+Elapsed time:                  29.30 secs
+Data transferred:               0.00 MB
+Response time:                  4.40 secs
+Transaction rate:              10.68 trans/sec
+Throughput:                     0.00 MB/sec
+Concurrency:                   47.03
+Successful transactions:         313
+Failed transactions:               1
+Longest transaction:           16.67
+Shortest transaction:           0.00
+

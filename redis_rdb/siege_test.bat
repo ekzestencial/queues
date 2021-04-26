@@ -1,0 +1,1 @@
+docker-compose run --rm siege -c2 -t1s http://producer/redis/read
